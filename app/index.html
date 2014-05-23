@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="myApp">
+    <head>
+        <script src="vendors/angular/angular.js"></script>
+        <script src="vendors/angular-route/angular-route.js"></script>
+        <script src="vendors/angular-resource/angular-resource.js"></script>
+        <script src="vendors/jquery/dist/jquery.js"></script>
+        <script src="vendors/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="vendors/d3/d3.js"></script>
+        <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+
+    <body ng-controller="mainCtrl">
+
+        <div class="loading-container" ng-show="indicators.loading">
+            <div class="loading">
+                <h1 class="text-muted">Loading...</h1>
+            </div>
+        </div>
+
+        <ng-include src="'templates/navBar.html'"></ng-include>
+
+        <div ng-view class="main-view-container"></div>
+
+        <script src="js/app.js"></script>
+        <script src="js/config.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/directives.js"></script>
+    </body>
+</html>
