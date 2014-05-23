@@ -35,3 +35,5 @@ cd app
 gulp
 ```
 
+7. go to localhost:9003/wines
+
