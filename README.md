@@ -5,35 +5,40 @@ AngularJS training source code
 
 Get started:
 
-1 - Make sure you have Node/NPM installed. (http://nodejs.org/)
+1 - Make sure you have Node/NPM installed on your system. (http://nodejs.org/)
 
-2 - Clone this project
+2 - install global dependencies
+```
+sudo npm install -g bower
+sudo npm install -g gulp
+```
 
-3 - cd to API and do npm install
+3 - Clone this project
 
+4 - cd to API and do npm install
 ```
 cd api
 npm install
 ```
 
-4 - cd to app and install dependencies
+5 - cd to app and install dependencies
 ```
 cd app
 npm install
 bower install
 ```
 
-5 - run api
+6 - run api
 ```
 cd api
 node server
 ```
 
-6 - run app
+7 - run app
 ```
 cd app
 gulp
 ```
 
-7 - your app is now runing at http://localhost:9003/wines
+8 - your app is now runing at http://localhost:9003/wines
 
