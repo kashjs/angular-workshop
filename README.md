@@ -23,13 +23,13 @@ npm install
 bower install
 ```
 
-4. run api
+5. run api
 ```
 cd api
 node server
 ```
 
-5. run app
+6. run app
 ```
 cd app
 gulp
