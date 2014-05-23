@@ -8,14 +8,17 @@ var gulp = require('gulp'),
     minifyHTML = require('gulp-minify-html'),
     cheerio = require('gulp-cheerio'),
     runSequence = require('run-sequence'),
-    clean = require('gulp-clean');
+    clean = require('gulp-clean'),
+    util = require('gulp-util');
 
 // ========== less task ========== //
 gulp.task('less', function () {
-   gulp.src('less/main.less').
-       pipe(less()).
-       pipe(gulp.dest('css/')).
-       pipe(connect.reload())
+   gulp.src('less/main.less')
+       .pipe(less())
+       .on('error', util.log)
+       .pipe(gulp.dest('css/'))
+       .pipe(connect.reload())
+       .on('error', util.log)
 });
 
 gulp.task('watch:less', function () {
