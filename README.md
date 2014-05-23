@@ -40,5 +40,5 @@ cd app
 gulp
 ```
 
-8 - your app is now runing at http://localhost:9003/wines
+8 - your app is now runing at (http://localhost:9003/#/wines)
 
