@@ -3,49 +3,90 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="wineId">Id:</label>
-                <input id="wineId" class="form-control" name="id" type="text" value="{{ models.wine._id }}"
-                       disabled/>
+                <input id="wineId"
+                       class="form-control"
+                       name="id"
+                       type="text"
+                       value="{{ models.wine._id }}"
+                       disabled>
             </div>
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" required ng-model="models.wine.name"/>
+                <input type="text"
+                       name="name"
+                       id="name"
+                       class="form-control"
+                       ng-model="models.wine.name"
+                       required>
 
             </div>
             <div class="form-group">
                 <label for="grapes">Grapes:</label>
-                <input type="text" id="grapes" class="form-control" name="grapes" required ng-model="models.wine.grapes"/>
+                <input type="text"
+                       name="grapes"
+                       id="grapes"
+                       class="form-control"
+                       ng-model="models.wine.grapes"
+                       required>
             </div>
             <div class="form-group">
                 <label for="country">Country:</label>
-                <input type="text" id="country" class="form-control" name="country" required ng-model="models.wine.country"/>
+                <input type="text"
+                       name="country"
+                       id="country"
+                       class="form-control"
+                       ng-model="models.wine.country"
+                       required>
             </div>
             <div class="form-group">
                 <label for="region">Region:</label>
-
-                <input type="text" id="region" class="form-control" name="region" ng-model="models.wine.region"/>
+                <input type="text"
+                       id="region"
+                       name="region"
+                       class="form-control"
+                       ng-model="models.wine.region">
             </div>
             <div class="form-group">
                 <label for="year">Year:</label>
-
-                <input type="text" class="form-control" id="year" name="year" required ng-model="models.wine.year"/>
+                <input type="text"
+                       name="year"
+                       id="year"
+                       class="form-control"
+                       ng-model="models.wine.year"
+                       required>
             </div>
             <div class="form-group">
                 <label for="description">Notes:</label>
-                <textarea id="description" class="form-control" name="description" style="width: 90%;"
-                          ng-model="models.wine.description" rows="6"></textarea>
+                <textarea name="description"
+                          id="description"
+                          class="form-control"
+                          style="width: 90%;"
+                          rows="6"
+                          ng-model="models.wine.description"></textarea>
             </div>
         </div>
         <div class="col-md-6" ng-hide="indicators.newWine">
             <div class="well" style="width: 180px;text-align: center;width:50%;margin: 0px auto;">
-                <p><img class="wine-img" id="picture" width="180"
-                        ng-src="img/wines/{{models.wine.picture}}"/></p>
+                <p><img class="auto-full-width"
+                        id="picture"
+                        width="180"
+                        ng-src="img/wines/{{models.wine.picture}}">
+                </p>
             </div>
         </div>
     </div>
     <div class="row margin-bottom-sm">
         <div class="form-actions">
-            <button ng-disabled="wineForm.$invalid" class="btn btn-primary save" ng-click="saveWine()">Save</button>
-            <button href="" class="btn delete" ng-click="deleteWine()">Delete</button>
+            <button class="btn btn-primary save"
+                    ng-disabled="wineForm.$invalid"
+                    ng-click="saveWine()">
+                Save
+            </button>
+            <button href=""
+                    class="btn delete"
+                    ng-click="deleteWine()">
+                Delete
+            </button>
         </div>
     </div>
 </form>

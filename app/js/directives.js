@@ -1,5 +1,6 @@
 angular.module('myApp').
     directive('winePreview', ['$location', '$rootScope', 'wines', function($location, $rootScope, wines) {
+        'use strict';
         return {
             restrict: 'E',
             scope: {
@@ -7,10 +8,10 @@ angular.module('myApp').
             },
             templateUrl: 'templates/winePreview.html',
             controller: ['$scope', function ($scope) {
+                // ========== ui handlers ========== //
                 $scope.navigateToWinePage = function (wine) {
                     $location.url('wine/' + wine._id);
                 };
-
                 $scope.likeWine = function(wine) {
                     wine.liked = true;
                     wine.likes++;
@@ -20,6 +21,7 @@ angular.module('myApp').
         };
     }]).
     directive('scopeTest', [function () {
+        'use strict';
         return {
             restrict: 'E',
             templateUrl: 'templates/scopeTest.html',
@@ -27,20 +29,23 @@ angular.module('myApp').
         };
     }]).
     directive('barChart', ['$window', function ($window) {
+        'use strict';
         return {
             restrict: 'E',
             scope: {
                 data: '=',
                 onClick: '&'
             },
-            link: function (scope, element, attributes) {
+            link: function (scope, element) {
+                // ========== local configuration ========== //
                 var svg = d3.select(element[0])
                     .append('svg')
                     .style('width', '100%'),
                     barHeight = 20,
                     barGap = 5,
-                    margin = 20
+                    margin = 20;
 
+                // ========== ui rendering ========== //
                 scope.render = function () {
                     svg.selectAll('*').remove();
 
@@ -64,15 +69,15 @@ angular.module('myApp').
                         })
                         .attr('height', barHeight)
                         .attr('width', function(d) {
-                            return scale(d.likes)
+                            return scale(d.likes);
                         })
                         .attr('x', margin / 2)
                         .attr('y', function (d, i) {
-                            return i * (barHeight + barGap)
+                            return i * (barHeight + barGap);
                         })
                         .attr('fill', function (d) {
                             return colors(d.likes);
-                        })
+                        });
 
                     svg.selectAll('text')
                         .data(scope.data)
@@ -90,8 +95,9 @@ angular.module('myApp').
                             return d.name + ' / ' + d.likes;
                         })
                         .style({'font-size': '10px'});
-                }
+                };
 
+                // ========== events binding and initialization ========== //
                 angular.element($window).on('resize', function() {
                    scope.render();
                    scope.$digest();

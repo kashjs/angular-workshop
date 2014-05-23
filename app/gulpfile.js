@@ -9,7 +9,8 @@ var gulp = require('gulp'),
     cheerio = require('gulp-cheerio'),
     runSequence = require('run-sequence'),
     clean = require('gulp-clean'),
-    util = require('gulp-util');
+    util = require('gulp-util'),
+    jshint = require('gulp-jshint');
 
 // ========== less task ========== //
 gulp.task('less', function () {
@@ -95,5 +96,11 @@ gulp.task('deploy:clean', function () {
 gulp.task('deploy', function (callback) {
     runSequence('deploy:clean', 'less', ['deploy:js', 'deploy:css', 'deploy:html', 'deploy:fonts', 'deploy:img', 'deploy:index'], callback);
 })
+
+gulp.task('jshint', function () {
+   gulp.src('js/**/*.js')
+       .pipe(jshint())
+       .pipe(jshint.reporter('jshint-stylish'))
+});
 
 gulp.task('default', ['server', 'watch:less']);

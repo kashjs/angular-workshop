@@ -2,19 +2,10 @@
   display: inline-block;
   vertical-align: top;
 }
-input.ng-invalid.ng-dirty {
-  background-color: #FA787E;
-}
-input.ng-valid.ng-dirty {
-  background-color: #78FA89;
-}
-.main-view-container {
-  margin-top: 60px;
-}
-.wine-img {
+.auto-full-width {
   width: 100%;
 }
-.wine-search {
+.margin-bottom-sm {
   margin-bottom: 10px;
 }
 body .loading-container {
@@ -30,9 +21,18 @@ body .loading-container .loading {
   vertical-align: middle;
   text-align: center;
 }
-.margin-bottom-sm {
-  margin-bottom: 10px;
+input.ng-invalid.ng-dirty {
+  background-color: #fa787e;
+}
+input.ng-valid.ng-dirty {
+  background-color: #78fa89;
+}
+.main-view-container {
+  margin-top: 60px;
 }
 .wines-view .title {
   margin: 0 0 10px 10px;
+}
+.wines-view .wine-search {
+  margin-bottom: 10px;
 }

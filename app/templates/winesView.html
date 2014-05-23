@@ -2,29 +2,31 @@
     <ol class="breadcrumb">
         <li class="active">Wines</li>
     </ol>
-
     <div class="row">
         <div class="col-md-6">
             <h3 class="text-muted title">Popular Wines</h3>
             <bar-chart data="models.wines" on-click="wineBarClicked(item)"></bar-chart>
         </div>
     </div>
-
     <div class="row">
         <h3 class="text-muted title">wine catalog</h3>
         <div class="col-md-3 wine-search">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="search" ng-model="wineSearch">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                <input type="text"
+                       class="form-control"
+                       placeholder="search"
+                       ng-model="wineSearch">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                </span>
             </div>
         </div>
     </div>
-
     <div class="row">
-        <div class="wine col-md-3" ng-repeat="wine in models.wines|orderBy:'year':-1|filter:wineSearch">
+        <div class="wine col-md-3"
+             ng-repeat="wine in models.wines|orderBy:'year':-1|filter:wineSearch">
             <wine-preview wine="wine"></wine-preview>
         </div>
     </div>
-
 </div>
 

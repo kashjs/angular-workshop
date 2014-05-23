@@ -1,6 +1,7 @@
 <div>
     <div class="thumbnail">
-        <img class="wine-img" ng-src="img/wines/{{wine.picture}}"
+        <img class="auto-full-width"
+             ng-src="img/wines/{{wine.picture}}"
              ng-click="navigateToWinePage(wine)">
         <div class="caption">
             <h3>{{ wine.name }}</h3>
@@ -8,8 +9,17 @@
                 <small>{{ wine.description }}</small>
             </p>
             <p>
-                <a href="" ng-click="navigateToWinePage(wine)" class="btn btn-primary" role="button">More Info</a>
-                <button href="" ng-click="likeWine(wine)" ng-disabled="wine.liked" class="btn btn-default" role="button">
+                <a href=""
+                   class="btn btn-primary"
+                   role="button"
+                   ng-click="navigateToWinePage(wine)">
+                    More Info
+                </a>
+                <button href=""
+                        class="btn btn-default"
+                        role="button"
+                        ng-click="likeWine(wine)"
+                        ng-disabled="wine.liked">
                 <i class="glyphicon glyphicon-plus"></i>
                     {{ wine.likes }}
                     Likes

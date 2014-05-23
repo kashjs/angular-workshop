@@ -1,8 +1,11 @@
 angular.module('myApp').
     controller('mainCtrl', ['$scope', 'globalIndicators', function ($scope, globalIndicators) {
+        'use strict';
+        // ========== local data ========== //
         $scope.indicators = globalIndicators;
     }]).
     controller('winesCtrl', ['$scope', 'wines', 'globalIndicators', function ($scope, wines, globalIndicators) {
+        'use strict';
         // ========== local data ========== //
         $scope.models = {
             wines: []
@@ -17,8 +20,8 @@ angular.module('myApp').
 
         // ========== ui handlers ============ //
         $scope.wineBarClicked = function (wine) {
-            console.log(wine)
-        }
+            console.log(wine);
+        };
 
         // =========== initialization ========== //
         globalIndicators.loading = true;
@@ -28,6 +31,7 @@ angular.module('myApp').
         });
     }]).
     controller('wineCtrl', ['$scope', '$routeParams', '$location', 'wines', 'globalIndicators', function ($scope, $routeParams, $location, wines, globalIndicators) {
+        'use strict';
         // ========== local data ========== //
         $scope.models = {
             wine: {
@@ -47,11 +51,7 @@ angular.module('myApp').
             } else {
                 wines.save({}, wine, function (wine) {
                     $scope.models.wine = wine;
-                },
-                    function () {
-                        alert()
-                    }
-                );
+                });
             }
         };
 
@@ -70,4 +70,4 @@ angular.module('myApp').
         } else {
             $scope.indicators.newWine = true;
         }
-    }])
+    }]);
