@@ -14,7 +14,24 @@ Get started:
 ```
 cd api
 npm install
-
 ```
 
+4. cd to app and install dependencies
+```
+cd app
+npm install
+bower install
+```
+
+4. run api
+```
+cd api
+node server
+```
+
+5. run app
+```
+cd app
+gulp
+```
 
